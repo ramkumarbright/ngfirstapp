@@ -1,0 +1,41 @@
+<div class="container-fluid register-form mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2>
+          Add New User {{mydata}}</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="userForm" (ngSubmit)="onSave()">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">            
+  
+                <input type="text" tabindex="0" formControlName="fName" [ngClass]="{ 'is-invalid': submitted && fval.fName.errors }" class="form-control"
+                 placeholder="First Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" tabindex="2"
+                       [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" formControlName="email" class="form-control"
+                       placeholder="Email *" value="" />
+                       <div class="errors" *ngIf="fval.email.errors?.email">Email must be a valid email address</div>
+  
+              </div>
+              
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">             
+                <input type="text" tabindex="1" formControlName="lName" [ngClass]="{ 'is-invalid': submitted && fval.lName.errors }" class="form-control" placeholder="Last Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" tabindex="3" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && fval.phone.errors }" class="form-control" placeholder="Phone Number *" value="" />
+              </div>
+              
+            </div>
+          </div>
+          <button type="submit" tabindex="6" class="btn btn-block btn-dark">Submit</button>
+          <button type="reset" tabindex="7" class="btn btn-block btn-danger" (click)="clear()">Clear</button>
+          </form>
+  </div>
+    </div>
+  </div>
+  

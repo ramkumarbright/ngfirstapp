@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -62,10 +64,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "firstapp:build"
+            "browserTarget": "firstapp:build",
+            "proxyConfig": "proxy.config.json"
           },
           "configurations": {
             "production": {
+              "historyApiFallback": true,
               "browserTarget": "firstapp:build:production"
             }
           }
@@ -88,6 +92,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "firstapp"
 }
