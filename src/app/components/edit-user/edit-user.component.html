@@ -1,8 +1,17 @@
 <div class="container-fluid register-form mt-5">
     <div class="card">
       <div class="card-header">
-        <h2>
-          Add New User {{mydata}}</h2>
+        <div class="row">
+<div class="col-4">
+  <h2>
+    Edit {{userForm.value.fName}} {{userForm.value.lName}}</h2>
+</div>
+<div class="col-8">
+  <span class="btn btn-link float-right"  (click)="cancel()">X</span>
+
+</div>
+        </div>
+       
       </div>
       <div class="card-body">
         <form [formGroup]="userForm" (ngSubmit)="onSave()">
@@ -32,8 +41,15 @@
               
             </div>
           </div>
-          <button type="submit" tabindex="6" class="btn btn-block btn-dark">Submit</button>
-          <button type="reset" tabindex="7" class="btn btn-block btn-danger" (click)="clear()">Clear</button>
+          <div class="row">
+<div class="col-6">          <button type="submit" tabindex="6" class="btn btn-block btn-dark">Submit</button>
+</div>
+<div class="col-6">          <button type="reset" tabindex="7" class="btn btn-block btn-danger" (click)="clear()">Clear</button>
+</div>
+
+
+
+          </div>
           </form>
   </div>
     </div>

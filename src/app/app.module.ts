@@ -22,7 +22,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home/:mode', component: HomeComponent },
   { path: 'edituser/:id', component: EditUserComponent },
   { path: '**', component: PageNotFundComponent }
 

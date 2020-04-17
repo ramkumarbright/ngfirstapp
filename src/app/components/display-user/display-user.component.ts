@@ -24,6 +24,7 @@ export class DisplayUserComponent implements OnInit {
 
   }
 
+ 
   ngOnInit(): void {
 
     //debugger;
@@ -40,6 +41,10 @@ export class DisplayUserComponent implements OnInit {
       }
 
       this.users = res.Response;
+    },error=>{
+           
+      console.log(error);
+
     });
 
   }

@@ -58,6 +58,11 @@ export class EditUserComponent implements OnInit {
     this.loadUser();   
   }
 
+  cancel(){
+
+    this.router.navigate(['/home/displayuser'])
+  }
+
 
   clear() {
     this.submitted = false;
