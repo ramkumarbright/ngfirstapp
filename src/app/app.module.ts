@@ -15,17 +15,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+//import { AppRoutingModule } from './app-routing.module';
 
 import { ModalComponent as ModalComponent } from './modal-component/modal-component.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { ExamplesComponent } from './examples/examples.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+   { path: '', component: HomeComponent },
   { path: 'home/:mode', component: HomeComponent },
-  { path: 'edituser/:id', component: EditUserComponent },
-  { path: '**', component: PageNotFundComponent }
+  { path: 'examples', component: ExamplesComponent },
 
+  { path: 'edituser/:id', component: EditUserComponent },
+  { path: '**', component: PageNotFundComponent },
+  { path: 'login', 
+  loadChildren:()=> import('./authentication/authentication.module')
+  .then(x=>x.AuthenticationModule)
+}
 ];
 
 
@@ -37,7 +44,8 @@ const appRoutes: Routes = [
     AddUsersComponent,
     DisplayUserComponent,
     ModalComponent,
-    EditUserComponent
+    EditUserComponent,
+    ExamplesComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +59,10 @@ const appRoutes: Routes = [
     MatDialogModule,
     RouterModule.forRoot(
       appRoutes,
+      
      // { enableTracing: true } // <-- debugging purposes only
     )
+    //AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

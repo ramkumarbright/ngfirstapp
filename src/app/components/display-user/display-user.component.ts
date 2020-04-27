@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user.model';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -32,6 +32,8 @@ export class DisplayUserComponent implements OnInit {
 
       debugger;
 
+     // this.users = users;
+
 
 
       if (res && res.Error) {
@@ -41,6 +43,7 @@ export class DisplayUserComponent implements OnInit {
       }
 
       this.users = res.Response;
+      
     },error=>{
            
       console.log(error);

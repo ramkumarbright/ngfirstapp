@@ -16,9 +16,11 @@ export class UserService {
 
   getAllUsers(): Observable<any> {
 
+    //getAllUsers(): Observable<User[]> {
 
 
-    return this.http.get('api/User');
+
+    return this.http.get<User[]>('api/User');
 
     //let headers =    {headers: {'Access-Control-Allow-Origin':'*','header2':'value2'}}
 
@@ -28,6 +30,7 @@ export class UserService {
   }
 
   getUser(userid:Number): Observable<any> {
+    
     return this.http.get('api/User/'+userid);
   }
 
